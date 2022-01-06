@@ -1,22 +1,4 @@
-class Node {
-  constructor(term, count = 1) {
-    this.data = {
-      term,
-      count,
-    };
-    this.next = null;
-    this.prev = null;
-  }
-  setNext(node) {
-    this.next = node;
-  }
-  setPrev(node) {
-    this.prev = node;
-  }
-  increment() {
-    this.data.count += 1;
-  }
-}
+const Node = require("./_node");
 
 class List {
   constructor() {
@@ -63,7 +45,6 @@ class List {
     node.setNext(current);
     return current;
   }
-
   length() {
     let current = this.head;
     let count = 0;
@@ -89,7 +70,4 @@ class List {
   }
 }
 
-module.exports = {
-  List,
-  Node,
-};
+module.exports = List;
